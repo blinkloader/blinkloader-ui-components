@@ -1,0 +1,32 @@
+{
+  "name": "blinkloader-ui-components",
+  "version": "1.0.0",
+  "description": "blinkloader ui components, overall style guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkloader/blinkloader-ui-components.git"
+  },
+  "keywords": [
+    "ui"
+  ],
+  "author": "blinkloader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blinkloader/blinkloader-ui-components/issues"
+  },
+  "homepage": "https://github.com/blinkloader/blinkloader-ui-components#readme",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/react": "^3.2.16"
+  },
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-jsx": "^2.2.0"
+  }
+}
