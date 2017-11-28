@@ -22,7 +22,7 @@
   "homepage": "https://github.com/blinkloader/blinkloader-ui-components#readme",
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.16",
-    "@storybook/react": "^3.2.16",
+    "@storybook/react": "^3.2.16"
   },
   "dependencies": {
     "array.prototype.find": "^2.0.4",
