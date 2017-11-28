@@ -1,9 +1,11 @@
-export Button from './Button';
-export ButtonNavigation from './ButtonNavigation';
-export Code from './Code';
-export Container from './Container';
-export Input from './Input';
-export Link from './Link';
-export TabNavigation from './TabNavigation';
-export Text from './Text';
-export Title from './Title';
+import Button from './Button';
+import ButtonNavigation from './ButtonNavigation';
+import Code from './Code';
+import Container from './Container';
+import Input from './Input';
+import Link from './Link';
+import TabNavigation from './TabNavigation';
+import Text from './Text';
+import Title from './Title';
+
+export { Button, ButtonNavigation, Code, Container, Input, Link, TabNavigation, Text, Title };
