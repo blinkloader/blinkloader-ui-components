@@ -1,12 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, decorateAction } from '@storybook/addon-actions';
 import Input from './index';
-
-
-const firstArgAction = decorateAction([
-  args => args.slice(0, 1)
-]);
 
 storiesOf('Input')
   .add('email', () => (

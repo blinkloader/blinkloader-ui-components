@@ -1,15 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class ButtonNavigation extends React.Component {
-  render() {
-    return (
-      <div>
-      <span className={'flex flex-row items-center justify-center '+(this.props.type==='back'? 'back button' : this.props.blocking ? 'blocking button' : 'forward button')}>
-          {this.props.type=='back'?<span className='backSign'>&#8249;</span>:''} 
-        <button className={this.props.type==='back'? 'back' : this.props.blocking ? 'blocking' : 'forward'} onClick={this.props.onClick}>
-          {this.props.children} 
+const ButtonNavigation = ({ type, blocking, children, onClick }) =>  {
+  return (
+    <div>
+      <span className = {
+        `flex flex-row items-center justify-center 
+        ${type === 'back'? 'back button' : blocking ? 'blocking button' : 'forward button'}`
+      }>
+        { type === 'back'? <span className='backSign'>&#8249;</span> : ''} 
+        <button 
+          className = { 
+            type === 'back'? 'back' : blocking ? 'blocking' : 'forward'
+          } 
+          onClick={ onClick }
+        >
+          { children } 
         </button>
-          {this.props.type=='forward'?<span className='nextSign'>&#8250;</span>:''}
+        { type === 'forward'? <span className='nextSign'>&#8250;</span> : ''}
       </span>
       <style jsx>{`
         .button {
@@ -69,9 +77,15 @@ class ButtonNavigation extends React.Component {
           cursor:pointer;
         }
       `}</style>
-      </div>
-    );
-  }
+    </div>
+  );
 }
+
+ButtonNavigation.propTypes = {
+  children: PropTypes.node,
+  type: PropTypes.oneOf(['back', 'forward', 'finish']),
+  onClick: PropTypes.func,
+  blocking: PropTypes.bool
+};
 
 export default ButtonNavigation;

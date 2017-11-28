@@ -1,11 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, decorateAction } from '@storybook/addon-actions';
 import Title from './index';
-
-const firstArgAction = decorateAction([
-  args => args.slice(0, 1)
-]);
 
 storiesOf('Title')
   .add('intro title h1', () => (

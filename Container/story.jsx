@@ -1,13 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, decorateAction } from '@storybook/addon-actions';
 import Container from './index';
 import Title from '../Title/index'
 import Button from '../Button/index'
-
-const firstArgAction = decorateAction([
-  args => args.slice(0, 1)
-]);
 
 storiesOf('Container')
   .add('with border', () => (

@@ -36,6 +36,7 @@ const Input = ({
   blurred,
   onFocus,
   onBlur,
+  onChange
 }) => {
   return (
     <div>

@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class Button extends React.Component {
-  render() {
-    return (
-      <div>
-      <button onClick={this.props.onClick} className={this.props.fullWidth? this.props.size +' full-width': this.props.size}>
-        {this.props.children}
+const Button = ({ onClick, fullWidth, size, children }) => {
+  return (
+    <div>
+      <button 
+        onClick={ onClick } 
+        className={ `button ${fullWidth? size +' full-width': size}` }
+      >
+        { children }
       </button>
       <style jsx>{`
         button {
@@ -20,6 +23,13 @@ class Button extends React.Component {
           display: table-cell;
           text-shadow: 0 1px 2px rgba(0,0,0,.2);
           cursor: pointer;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         }
         button:focus, button:active, button:hover {
           background-color:#57bbf2;
@@ -43,9 +53,15 @@ class Button extends React.Component {
           border-radius:0.6rem; 
         }
       `}</style>
-      </div>
-    );
-  }
+    </div>
+  );
 }
+
+Button.propTypes = {
+  children: PropTypes.node,
+  size: PropTypes.oneOf(['large', 'medium', 'small']),
+  onClick: PropTypes.func,
+  fullWidth: PropTypes.bool
+};
 
 export default Button;

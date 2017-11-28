@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Code = ({  type, children  })  => {
+const Code = ({ children  })  => {
   return (
     <pre className='code'>
       <code>
-      {children}
+      { children }
       </code>
     <style jsx>{`
       pre {

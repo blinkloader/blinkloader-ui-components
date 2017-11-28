@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Text = ({  type, children  })  => {
+const Text = ({ type, children })  => {
   return (
     <div className='text'>
-    {type == 'caption' && <span className='caption'>{children}</span>}
-    {type == 'text' && <p className='text'>{children}</p>}
-    {type == 'details' && <span className='details'>{children}</span>}
-    {type == 'error' && <span className='error'>{children}</span>}
+    { type === 'caption' && <span className='caption'>{ children }</span>}
+    { type === 'text' && <p className='text'>{ children }</p>}
+    { type === 'details' && <span className='details'>{ children }</span>}
+    { type === 'error' && <span className='error'>{ children }</span>}
     
     <style jsx>{`
       .text {
@@ -38,7 +38,7 @@ const Text = ({  type, children  })  => {
 
 Text.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(['caption', 'text', 'details', 'error']),
+  type: PropTypes.oneOf(['caption', 'text', 'details', 'error'])
 };
 
 export default Text;

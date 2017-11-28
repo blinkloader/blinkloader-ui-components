@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({  type, children  }) => {
+const Link = ({ type, children }) => {
   return (
     <div className='link'>
-    {type == 'topnav' && <a className='topnav'>{children}</a>}
-    {type == 'bottomnav' && <a className='bottomnav'>{children}</a>}
-    {type == 'withintext' && <a className='withintext'>{children}</a>}
+    { type == 'topnav' && <a className='topnav'>{ children }</a>}
+    { type == 'bottomnav' && <a className='bottomnav'>{ children }</a>}
+    { type == 'withintext' && <a className='withintext'>{ children }</a>}
     
     <style jsx>{`
       .link {
@@ -53,12 +53,12 @@ const Link = ({  type, children  }) => {
 }
 
 Link.propTypes = {
-  children: PropTypes.node,
+  children : PropTypes.node,
   type: PropTypes.oneOf(['topnav', 'bottomnav', 'withintext']),
 };
 
 Link.defaultProps = {
-  children: 'link',
+  children : 'link',
   type:'topnav'
 }
 
