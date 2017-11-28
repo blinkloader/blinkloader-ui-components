@@ -1,0 +1,34 @@
+{
+  "name": "blinkloader-ui-components",
+  "version": "1.0.0",
+  "description": "A shared set of UI Components using React for Blinkloader applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -s ./public -p 9001 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkloader/blinkloader-ui-components.git"
+  },
+  "keywords": [
+    "ui"
+  ],
+  "author": "Blinkloader.com, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blinkloader/blinkloader-ui-components/issues"
+  },
+  "homepage": "https://github.com/blinkloader/blinkloader-ui-components#readme",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/react": "^3.2.16",
+  },
+  "dependencies": {
+    "array.prototype.find": "^2.0.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-jsx": "^2.2.0"
+  }
+}
