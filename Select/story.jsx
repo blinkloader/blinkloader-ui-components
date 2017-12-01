@@ -14,6 +14,7 @@ storiesOf('Select')
     <Select
       options={options}
       onChange={action('on-change')}
+      label="Your stack"
     />
   ))
   .add('with value set', () => (
