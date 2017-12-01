@@ -20,6 +20,13 @@ const Container = ({ type, children}) => {
          </div>   
       }
       <style jsx>{`
+        .container {
+          height:auto;
+          width:100%;
+          box-sizing:border-box;
+          font-family:'Open Sans',sans-serif;
+          color:#333;
+        }
         @media screen and (max-width: 40em) {
           .border {
             border-width: 3px;
@@ -38,11 +45,6 @@ const Container = ({ type, children}) => {
           }
         }        
         @media screen and (min-width: 40em) {
-          .container {
-            height:auto;
-            width:100%;
-            box-sizing:border-box;
-          }
           .border {
             border-width: 3px;
             border-style: solid;
