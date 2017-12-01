@@ -23,6 +23,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.16",
     "@storybook/react": "^3.2.16",
+    "react-responsive-select": "^3.0.10"
   },
   "dependencies": {
     "array.prototype.find": "^2.0.4",
