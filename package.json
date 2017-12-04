@@ -1,6 +1,6 @@
 {
   "name": "blinkloader-ui-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A shared set of UI Components using React for Blinkloader applications.",
   "main": "./dist/index.js",
   "scripts": {
