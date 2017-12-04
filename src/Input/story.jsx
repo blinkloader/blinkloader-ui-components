@@ -19,11 +19,11 @@ storiesOf('Input')
     <Input type='number' />
   ))
   .add('website with error', () => (
-    <Input 
-      type='url' 
+    <Input
+      type='url'
       input={{
               value: 'examplecom',
-              onChange: action('on-change')
+              onChange: function () { console.log('Foo!') }
             }}
       meta={{
               error: 'invalid url',

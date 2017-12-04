@@ -60,3 +60,5 @@ typings/
 # Vim files
 *.swp
 *.swo
+
+dist

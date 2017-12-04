@@ -5,17 +5,17 @@ const ButtonNavigation = ({ type, blocking, children, onClick }) =>  {
   return (
     <div>
       <span className = {
-        `flex flex-row items-center justify-center 
+        `flex flex-row items-center justify-center
         ${type === 'back'? 'back button' : blocking ? 'blocking button' : 'forward button'}`
       }>
-        { type === 'back'? <span className='backSign'>&#8249;</span> : ''} 
-        <button 
-          className = { 
+        { type === 'back'? <span className='backSign'>&#8249;</span> : ''}
+        <button
+          className = {
             type === 'back'? 'back' : blocking ? 'blocking' : 'forward'
-          } 
+          }
           onClick={ onClick }
         >
-          { children } 
+          { children }
         </button>
         { type === 'forward'? <span className='nextSign'>&#8250;</span> : ''}
       </span>
@@ -28,7 +28,6 @@ const ButtonNavigation = ({ type, blocking, children, onClick }) =>  {
           width:100%;
         }
         button {
-          text-shadow: 0 1px 2px rgba(0,0,0,.2);
           flex-grow:1;
           border-color:transparent;
           outline:none;
@@ -61,6 +60,7 @@ const ButtonNavigation = ({ type, blocking, children, onClick }) =>  {
           cursor:pointer;
         }
         .blocking {
+          text-shadow: 0 1px 2px rgba(0,0,0,.2);
           background-color:#cccccc;
           color:white;
         }
@@ -69,6 +69,7 @@ const ButtonNavigation = ({ type, blocking, children, onClick }) =>  {
           cursor:pointer;
         }
         .forward {
+          text-shadow: 0 1px 2px rgba(0,0,0,.2);
           background-color:#4edb43;
           color:white;
         }

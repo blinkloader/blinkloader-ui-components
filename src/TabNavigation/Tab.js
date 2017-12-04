@@ -11,7 +11,11 @@ const Tab = ({ tab, children }) => {
 }
 Tab.propTypes = {
   children: PropTypes.node,
-  tab: PropTypes.object.isrequired
+  tab: PropTypes.shape({
+    name: PropTypes.string,
+    img: PropTypes.string,
+    square: PropTypes.bool,
+  }).isRequired
 };
 
 export default Tab;
