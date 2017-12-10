@@ -50,7 +50,7 @@ const Input = ({
         onFocus={onFocus}
         onBlur={onBlur}
         autoComplete={type}
-        className={focused ?'focused': blurred? 'blurred' : meta.error ? 'error' : ''}
+        className={focused ?'focused w-100': blurred? 'blurred w-100' : meta.error ? 'error w-100' : 'w-100'}
       />
       {renderError(meta)}
       <style jsx>{`
@@ -76,6 +76,9 @@ const Input = ({
       }
       input.error {
         border-color: #FF00BF !important;
+      }
+      .w-100 {
+        width:100%;
       }
       :-webkit-autofill { color: #fff !important; }
       `}</style>

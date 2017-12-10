@@ -26,3 +26,6 @@ storiesOf('Container')
   .add('page', () => (
     <Container type='page'><Title type='intro'>Hobby</Title><Title type='pageSectionTitle'>Best for Pet Project</Title></Container>
   ))
+  .add('with border and decoration', () => (
+    <Container type='decoration' decoration='Most popular'><Title type='intro'>Hobby</Title><Title type='pageSectionTitle'>Best for Pet Project</Title></Container>
+  ))

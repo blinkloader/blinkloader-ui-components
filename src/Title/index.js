@@ -14,20 +14,18 @@ const Title = ({ type, children }) => {
         color:#333;
         line-height:1.5;
         margin:0;
+        font-weight:200;
       }
       .intro {
         font-size:36px;
-        font-weight:200;
       }
       .pageSectionTitle {
         font-size:24px;
-        font-weight:200;
         text-transform:uppercase;
         color:#4bc1e6;
       }
       .paragraphH3 {
         color:#999;
-        font-weight:400;
         font-size:20px;
       }
     `}</style>

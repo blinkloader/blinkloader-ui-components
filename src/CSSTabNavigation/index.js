@@ -4,7 +4,7 @@ import find from 'array.prototype.find';
 const CSSTabNavigation = ({ children }) => {
   const tabs = children.map((el) => (el.props.tab))
   return (
-    <div className='flex flex-wrap justify-center'>
+    <div className='cssTab flex flex-wrap justify-center'>
       { tabs.map((tab, i, arr) => {
         return ([
           <input

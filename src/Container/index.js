@@ -1,25 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Text from '../Text/index';
 
-const Container = ({ type, children}) => {
+const Container = ({ type, children, decoration }) => {
   return (
     <div>
       { type === 'border' &&
-         <div className='border flex flex-column  justify-center items-center container'>
-           { children }
-         </div>   
+        <div className='wrap w-100 flex-column justify-center'>
+          <div className='border flex flex-column  justify-center items-center container'>
+            { children }
+          </div>   
+        </div>
       }
       { type === 'noborder' &&
-         <div className='noborder container'>
-           { children }
-         </div>   
+        <div className='noborder container'>
+          { children }
+        </div>   
       }
       { type === 'page' &&
-         <div className='page container'>
-           { children }
-         </div>   
+        <div className='page container'>
+          { children }
+        </div>   
+      }
+      { type === 'decoration' &&
+        
+        <div className='wrap w-100 flex-column justify-center'>
+          <div className='positionedBlock'>
+            <div className='decoratedBlock'>
+            <Text type='white'>
+              { decoration }
+            </Text>
+            </div>
+          </div>
+          <div className='border flex flex-column  justify-center items-center container'>
+            { children }
+          </div>   
+        </div>
       }
       <style jsx>{`
+        .wrap {
+          position: relative;
+          padding-top:10px;
+        }
+        .positionedBlock {
+          position:absolute;
+          top:12px;
+          width:100%;
+        }
+        .decoratedBlock {
+          background-color:#42B273;
+          text-align:center;
+          margin-left: auto;
+          margin-right: auto;
+          max-width:7rem; 
+          border-radius:0 0 3px 3px;
+        }
         .container {
           height:auto;
           width:100%;
@@ -69,7 +104,8 @@ const Container = ({ type, children}) => {
 
 Container.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(['border','noborder','page'])
+  decoration: PropTypes.string,
+  type: PropTypes.oneOf(['border','noborder','page', 'decoration'])
 };
 
 export default Container;

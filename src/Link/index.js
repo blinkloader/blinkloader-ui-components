@@ -24,7 +24,8 @@ const Link = ({ type, children }) => {
         color:#63c8ff;
         font-size:18px;
         text-decoration: none;
-        border-bottom: solid 1px #63c8ff;
+        padding-bottom:5px;
+        border-bottom: solid 2px #63c8ff;
         cursor:pointer;
       }
       .bottomnav {

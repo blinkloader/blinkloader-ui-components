@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ onClick, fullWidth, size, children }) => {
   return (
-    <div>
+    <div className={fullWidth?'full-width':''}>
       <button 
         onClick={ onClick } 
         className={ `button ${fullWidth? size +' full-width': size}` }
