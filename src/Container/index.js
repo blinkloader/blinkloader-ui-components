@@ -17,6 +17,11 @@ const Container = ({ type, children, decoration }) => {
           { children }
         </div>   
       }
+      { type === 'nopadding' &&
+        <div className='nopadding container'>
+          { children }
+        </div>   
+      }
       { type === 'page' &&
         <div className='page container'>
           { children }
@@ -62,9 +67,12 @@ const Container = ({ type, children, decoration }) => {
           font-family:'Open Sans',sans-serif;
           color:#333;
         }
+        .nopadding {
+          padding:0;
+        }
         @media screen and (max-width: 40em) {
           .border {
-            border-width: 3px;
+            border-width: 2px;
             border-style: solid;
             border-color: rgb(240, 240, 240);
             border-radius:2rem;
@@ -81,7 +89,7 @@ const Container = ({ type, children, decoration }) => {
         }        
         @media screen and (min-width: 40em) {
           .border {
-            border-width: 3px;
+            border-width: 2px;
             border-style: solid;
             border-color: rgb(240, 240, 240);
             border-radius:2rem;
@@ -105,7 +113,7 @@ const Container = ({ type, children, decoration }) => {
 Container.propTypes = {
   children: PropTypes.node,
   decoration: PropTypes.string,
-  type: PropTypes.oneOf(['border','noborder','page', 'decoration'])
+  type: PropTypes.oneOf(['border','noborder','page', 'decoration', 'nopadding'])
 };
 
 export default Container;

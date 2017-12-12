@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container from '../Container/index'
 
-const Tab = ({ tab, children }) => {
+const Tab = ({ tab, children, containerType }) => {
   return (
-    <Container type='noborder'>
+    <Container type={containerType ? containerType : 'noborder'}>
        {children}
     </Container>
   );
@@ -15,7 +15,10 @@ Tab.propTypes = {
     name: PropTypes.string,
     img: PropTypes.string,
     square: PropTypes.bool,
-  }).isRequired
+  }).isRequired,
+  wrapperName: PropTypes.string,
+  wrapperType: PropTypes.string,
+  containerType: PropTypes.string
 };
 
 export default Tab;

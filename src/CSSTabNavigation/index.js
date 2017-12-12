@@ -1,5 +1,7 @@
 import React from 'react';
 import find from 'array.prototype.find';
+import Title from '../Title';
+import Text from '../Text';
 
 const CSSTabNavigation = ({ children }) => {
   const tabs = children.map((el) => (el.props.tab))
@@ -15,12 +17,12 @@ const CSSTabNavigation = ({ children }) => {
           />,
           <label key={`label_${tab.name}`} htmlFor={`tab${i+1}`}>
             <div className='flex flex-row justify-center items-center'>
-              <img
+              {tab.img && <img
                 className={tab.square?'squareLogo':'logo'}
                 src={tab.img}
-              />
+              />}
               <span>
-                {tab.square?tab.name:''}
+                {tab.wrapperName ? (tab.wrapperName === 'Title' ? <Title type={tab.wrapperType}>{tab.name}</Title> : tab.wrapperName === 'Text' ? <Text type={tab.wrapperType}>{tab.name}</Text> : tab.name) : (tab.square ? tab.name:'')}
               </span>
             </div>
           </label>
@@ -38,6 +40,68 @@ const CSSTabNavigation = ({ children }) => {
       </div>
 
       <style jsx>{`
+  @media screen and (min-width:60em) {
+         .cssTab label {
+           padding: 15px 25px;
+         }
+ }
+ @media screen and (max-width:60em) and (min-width:30em) {
+         .cssTab label {
+           padding: 10px;
+         }
+ }
+ @media screen and (max-width:30em) {
+         .cssTab > label {
+           padding: 5px;
+         }
+ }
+4       .logo {
+           max-height:30px;
+         }
+         .squareLogo {
+           padding-right:5px;
+           max-height:30px;
+         }
+         .content > div {
+           display: none;
+         }
+         .cssTab > input {display: none;}
+         .cssTab > label {
+           display: inline-block;
+           text-align: center;
+           font-family:'Open Sans',sans-serif;
+           font-size:14px;
+           font-weight:600;
+           background-color:white;
+           border:transparent;
+           border-bottom:solid 2px transparent;
+           outline:none;
+           margin:5px;
+         }
+         .cssTab > label:hover {
+           border-bottom: solid 2px #00adee;
+           opacity:0.7;
+           transition: all .2s ease-in;
+           cursor: pointer;
+         }
+         .cssTab > input:checked + .cssTab > label {
+           border-bottom: solid 2px #00adee;
+           opacity:0.7;
+           cursor: pointer;
+         }
+         #tab1:checked ~ .content #content1,
+         #tab2:checked ~ .content #content2,
+         #tab3:checked ~ .content #content3,
+         #tab4:checked ~ .content #content4,
+         #tab5:checked ~ .content #content5,
+         #tab6:checked ~ .content #content6,
+         #tab7:checked ~ .content #content7,
+         #tab8:checked ~ .content #content8,
+1        #tab9:checked ~ .content #content9,
+         #tab10:checked ~ .content #content10 {
+           display: block;
+         }
+
         .logo {
           max-height:30px;
         }
@@ -49,9 +113,11 @@ const CSSTabNavigation = ({ children }) => {
           display: none;
         }
         input {display: none;}
+        .largeLabelPadding {
+          padding: 15px 25px;
+        }
         label {
           display: inline-block;
-          padding: 15px 25px;
           text-align: center;
           font-family:'Open Sans',sans-serif;
           font-size:14px;
@@ -60,7 +126,6 @@ const CSSTabNavigation = ({ children }) => {
           border:transparent;
           border-bottom:solid 2px transparent;
           outline:none;
-          margin:5px;
         }
         label:hover {
           border-bottom: solid 2px #00adee;

@@ -1,15 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ onClick, fullWidth, size, children }) => {
+const Button = ({ onClick, fullWidth, size, children, href, style }) => {
   return (
-    <div className={fullWidth?'full-width':''}>
-      <button 
+    <div className={fullWidth?'full-width flex flex-row justify-center tc':''}>
+      { !href && <button 
         onClick={ onClick } 
+        style = { style }
         className={ `button ${fullWidth? size +' full-width': size}` }
       >
         { children }
-      </button>
+      </button>}
+      { href && <a 
+        href = { href } 
+        style = { style }
+        className={ `button ${fullWidth? size +' full-width': size}` }
+      >
+        { children }
+      </a>}
       <style jsx>{`
         button {
           border-color:transparent;
@@ -31,7 +39,31 @@ const Button = ({ onClick, fullWidth, size, children }) => {
           user-select: none;
           -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         }
+        a.button {
+          text-decoration:none;
+          border-color:transparent;
+          outline:none;
+          color:white;
+          font-family:'Open Sans',sans-serif;
+          background-color:#00adee;
+          line-height: 1.5;
+          height:100%
+          vertical-align: middle;
+          display: table-cell;
+          text-shadow: 0 1px 2px rgba(0,0,0,.2);
+          cursor: pointer;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
         button:focus, button:active, button:hover {
+          background-color:#57bbf2;
+        }
+        a.button:focus, a.button:active, a.button:hover {
           background-color:#57bbf2;
         }
         .full-width {
@@ -61,7 +93,9 @@ Button.propTypes = {
   children: PropTypes.node,
   size: PropTypes.oneOf(['large', 'medium', 'small']),
   onClick: PropTypes.func,
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  href: PropTypes.string,
+  style: PropTypes.object
 };
 
 export default Button;

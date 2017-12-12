@@ -26,3 +26,6 @@ storiesOf('Button')
   .add('small, full width', () => (
     <Button onClick={firstArgAction('on-click')} size='small' fullWidth='true'>send e-mail</Button>
   ))
+  .add('large link', () => (
+    <Button href='/' size='large'>start for free</Button>
+  ))

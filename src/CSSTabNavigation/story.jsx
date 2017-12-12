@@ -50,5 +50,38 @@ storiesOf('CSSTabNavigation')
       </Tab>
     </CSSTabNavigation>
   ))
+  .add('with wrapper', () => (
+    <CSSTabNavigation>
+      <Tab tab={{name:'Free', wrapperName:'Title', wrapperType:'pageSectionTitle'}}>
+        <div className='flex flex-row-ns flex-column justify-around'>
+          Free
+        </div>
+      </Tab>
+      <Tab tab={{name:'Hobby', wrapperName:'Title', wrapperType:'pageSectionTitle'}}>
+        <div className='flex flex-row-ns flex-column justify-around'>
+          <div>
+            Hobby
+          </div>
+        </div>
+      </Tab>
+      <Tab tab={{name:'Growth', wrapperName:'Title', wrapperType:'pageSectionTitle'}} name='Jekyll'>
+        <div className='flex flex-row-ns flex-column justify-around'>
+          Growth
+        </div>
+      </Tab>
+      <Tab tab={{name:'Business', wrapperName:'Title', wrapperType:'pageSectionTitle'}}>
+        <div className='flex flex-row-ns flex-column justify-around'>
+          Business
+        </div>
+      </Tab>
+      <Tab tab={{name:'Enterprise', wrapperName:'Title', wrapperType:'pageSectionTitle'}}>
+        <div className='flex flex-row-ns flex-column justify-around'>
+          Enterprise
+        </div>
+      </Tab>
+    </CSSTabNavigation>
+  ))
+
+
 
 
