@@ -40,68 +40,24 @@ const CSSTabNavigation = ({ children }) => {
       </div>
 
       <style jsx>{`
-  @media screen and (min-width:60em) {
-         .cssTab label {
-           padding: 15px 25px;
-         }
- }
- @media screen and (max-width:60em) and (min-width:30em) {
-         .cssTab label {
-           padding: 10px;
-         }
- }
- @media screen and (max-width:30em) {
-         .cssTab > label {
-           padding: 5px;
-         }
- }
-4       .logo {
-           max-height:30px;
-         }
-         .squareLogo {
-           padding-right:5px;
-           max-height:30px;
-         }
-         .content > div {
-           display: none;
-         }
-         .cssTab > input {display: none;}
-         .cssTab > label {
-           display: inline-block;
-           text-align: center;
-           font-family:'Open Sans',sans-serif;
-           font-size:14px;
-           font-weight:600;
-           background-color:white;
-           border:transparent;
-           border-bottom:solid 2px transparent;
-           outline:none;
-           margin:5px;
-         }
-         .cssTab > label:hover {
-           border-bottom: solid 2px #00adee;
-           opacity:0.7;
-           transition: all .2s ease-in;
-           cursor: pointer;
-         }
-         .cssTab > input:checked + .cssTab > label {
-           border-bottom: solid 2px #00adee;
-           opacity:0.7;
-           cursor: pointer;
-         }
-         #tab1:checked ~ .content #content1,
-         #tab2:checked ~ .content #content2,
-         #tab3:checked ~ .content #content3,
-         #tab4:checked ~ .content #content4,
-         #tab5:checked ~ .content #content5,
-         #tab6:checked ~ .content #content6,
-         #tab7:checked ~ .content #content7,
-         #tab8:checked ~ .content #content8,
-1        #tab9:checked ~ .content #content9,
-         #tab10:checked ~ .content #content10 {
-           display: block;
-         }
-
+        @media screen and (min-width:60em) {
+          .cssTab label {
+            padding: 15px 25px;
+            margin:5px;
+          }
+        }
+        @media screen and (max-width:60em) and (min-width:30em) {
+          .cssTab label {
+            padding: 10px;
+            margin:5px;
+          }
+        }
+        @media screen and (max-width:30em) {
+          .cssTab > label {
+            padding: 5px;
+            margin:3px;
+          }
+        }
         .logo {
           max-height:30px;
         }
@@ -112,11 +68,8 @@ const CSSTabNavigation = ({ children }) => {
         .content > div {
           display: none;
         }
-        input {display: none;}
-        .largeLabelPadding {
-          padding: 15px 25px;
-        }
-        label {
+        .cssTab > input {display: none;}
+        .cssTab > label {
           display: inline-block;
           text-align: center;
           font-family:'Open Sans',sans-serif;
@@ -127,7 +80,7 @@ const CSSTabNavigation = ({ children }) => {
           border-bottom:solid 2px transparent;
           outline:none;
         }
-        label:hover {
+        .cssTab > label:hover {
           border-bottom: solid 2px #00adee;
           opacity:0.7;
           transition: all .2s ease-in;
@@ -150,7 +103,6 @@ const CSSTabNavigation = ({ children }) => {
         #tab10:checked ~ .content #content10 {
           display: block;
         }
-
       `}</style>
     </div>
   );

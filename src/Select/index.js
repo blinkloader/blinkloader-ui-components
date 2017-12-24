@@ -17,19 +17,22 @@ const Select = ({
   label,
   value,
   hovered,
+  name
 }) => {
 
   return (
     <div>
-        <Title style={{paddingBottom: '0.5rem'}} type='paragraphH3'>
+        <div style={{paddingBottom: '0.5rem'}}>
+        <Title type='paragraphH3'>
           {label}
         </Title>
+        </div>
         <ReactResponsiveSelect
           caretIcon={caretIcon}
           options={options}
           onChange={onChange}
           selectedValue={value}
-          name='hello'
+          name={name}
         />
       <style jsx global>{`
         .rrs {
@@ -51,8 +54,7 @@ const Select = ({
         .rrs__button {
           position: relative;
           cursor: pointer;
-          height: 44px;
-          line-height: 44px;
+          padding:0.7rem 1rem;
           background: #fff;
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           border-style:solid;
@@ -229,6 +231,7 @@ Select.propTypes = {
     PropTypes.number,
   ]),
   hovered: PropTypes.bool,
+  name: PropTypes.string
 };
 
 Select.defaultProps = {
@@ -236,6 +239,7 @@ Select.defaultProps = {
   disabled: false,
   label: null,
   value: undefined,
+  name: ''
 };
 
 export default Select;

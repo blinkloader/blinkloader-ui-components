@@ -15,6 +15,7 @@ storiesOf('Select')
       options={options}
       onChange={action('on-change')}
       label="Your stack"
+      name='stack'
     />
   ))
   .add('with value set', () => (
@@ -22,5 +23,6 @@ storiesOf('Select')
       options={options}
       value={'React Components'}
       onChange={action('on-change')}
+      name='stack'
     />
   ))

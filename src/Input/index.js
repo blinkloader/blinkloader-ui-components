@@ -27,7 +27,7 @@ const renderError = ({ touched, error }) => (
   ) : null
 );
 const Input = ({
-  input,
+  value,
   label,
   meta,
   placeholder,
@@ -36,20 +36,22 @@ const Input = ({
   blurred,
   onFocus,
   onBlur,
-  onChange
+  onChange,
+  name
 }) => {
   return (
     <div>
       {renderLabel({ label })}
       <input
         disabled={meta.submitting}
-        value={input.value}
-        onChange={input.onChange}
+        value={value}
+        name={name}
+        onChange={onChange}
         placeholder={placeholder}
         type={type}
         onFocus={onFocus}
         onBlur={onBlur}
-        autoComplete={type}
+        autoComplete={'on'}
         className={focused ?'focused w-100': blurred? 'blurred w-100' : meta.error ? 'error w-100' : 'w-100'}
       />
       {renderError(meta)}
@@ -60,6 +62,7 @@ const Input = ({
         -ms-appearance:         none;
         -o-appearance:          none;
         appearance:             none;
+        box-sizing: border-box;
         box-shadow: none !important; 
         border-style:solid;
         font-size:18px;
@@ -69,6 +72,7 @@ const Input = ({
         padding: 0.7rem 1rem;
         font-size: 1rem;
         border-radius:0.7rem; 
+
       }
       input:focus:not(.error), input:hover:not(error), .focused {
         outline: none;
@@ -87,15 +91,13 @@ const Input = ({
 };
 
 Input.defaultProps = {
-  input: {},
   meta: {},
   type: 'text',
 };
 
 Input.propTypes = {
-  input: PropTypes.shape({
-    value: PropTypes.string,
-  }),
+  value: PropTypes.string,
+  name: PropTypes.string,
   label: PropTypes.string,
   meta: PropTypes.shape({
     error: PropTypes.string,
@@ -112,7 +114,7 @@ Input.propTypes = {
     'email',
     'url',
     'password',
-    'organisation',
+    'organization',
     'number',
   ]),
 };
