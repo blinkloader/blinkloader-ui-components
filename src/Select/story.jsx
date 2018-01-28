@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Select from './index';
 
 const options = [
@@ -13,7 +12,6 @@ storiesOf('Select')
   .add('default', () => (
     <Select
       options={options}
-      onChange={action('on-change')}
       label="Your stack"
       name='stack'
     />
@@ -22,7 +20,6 @@ storiesOf('Select')
     <Select
       options={options}
       value={'React Components'}
-      onChange={action('on-change')}
       name='stack'
     />
   ))

@@ -7,7 +7,6 @@ import Link from './Link';
 import TabNavigation from './TabNavigation';
 import Tab from './TabNavigation';
 import CSSTabNavigation from './CSSTabNavigation';
-import Tab from './TabNavigation';
 import Text from './Text';
 import Title from './Title';
 import GreetingSlider from './GreetingSlider';
