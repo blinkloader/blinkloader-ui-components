@@ -9,13 +9,13 @@ const Text = ({type, children}) => {
       { type === 'details' && <span className="details">{ children }</span>}
       { type === 'error' && <span className="error">{ children }</span>}
       { type === 'white' && <span className="white">{ children }</span>}
+      { type === 'bold' && <span className="bold">{ children }</span>}
       <style jsx>
         {`
           @media screen and (max-width:30em) {
             .text {
               font-family:'Open Sans',sans-serif;
               color:#333;
-              font-weight:400;
               margin:0;
               font-size:14px;
               line-height:1.6;
@@ -23,28 +23,37 @@ const Text = ({type, children}) => {
             .caption {
               font-size:16px;
               line-height:1.6;
+              font-weight:400;
             }
             .details {
               font-size:12px;
               color:#999;
               line-height:1.4;
+              font-weight:400;
             }
             .error {
               font-size:14px;
               color: #FF00BF;
               line-height:1.5;
+              font-weight:400;
             }
             .white {
               font-size:14px;
               color: #FFFFFF;
               line-height:1.5;
+              font-weight:400;
+            }
+            .bold {
+              font-size:16px;
+              line-height:1.6;
+              font-weight: 800;
+              color: #666666;
             }
           }
           @media screen and (min-width:30em) {
             .text {
               font-family:'Open Sans',sans-serif;
               color:#333;
-              font-weight:400;
               margin:0;
               font-size:16px;
               line-height:1.6;
@@ -52,21 +61,31 @@ const Text = ({type, children}) => {
             .caption {
               font-size:18px;
               line-height:1.6;
+              font-weight:400;
             }
             .details {
               font-size:12px;
               color:#999;
               line-height:1.4;
+              font-weight:400;
             }
             .error {
               font-size:14px;
               color: #FF00BF;
               line-height:1.5;
+              font-weight:400;
             }
             .white {
               font-size:14px;
               color: #FFFFFF;
               line-height:1.5;
+              font-weight:400;
+            }
+            .bold {
+              font-size:18px;
+              line-height:1.6;
+              font-weight: 800;
+              color: #666666;
             }
           }
         `}
@@ -82,7 +101,7 @@ Text.defaultProps = {
 
 Text.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(['caption', 'text', 'details', 'error', 'white'])
+  type: PropTypes.oneOf(['caption', 'text', 'details', 'error', 'white', 'bold'])
 };
 
 export default Text;

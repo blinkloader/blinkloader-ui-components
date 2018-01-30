@@ -9,6 +9,5 @@ import Tab from './TabNavigation';
 import CSSTabNavigation from './CSSTabNavigation';
 import Text from './Text';
 import Title from './Title';
-import GreetingSlider from './GreetingSlider';
 
-export { Button, ButtonNavigation, Code, Container, Input, Link, TabNavigation, Text, Title, Tab, CSSTabNavigation, GreetingSlider };
+export { Button, ButtonNavigation, Code, Container, Input, Link, TabNavigation, Text, Title, Tab, CSSTabNavigation };
