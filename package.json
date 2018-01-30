@@ -33,15 +33,15 @@
     "react-responsive-select": "^3.0.10"
   },
   "dependencies": {
+    "array.prototype.find": "^2.0.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "rimraf": "^2.6.2",
     "cross-env": "^5.1.1",
-    "array.prototype.find": "^2.0.4",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-slick": "^0.16.0",
+    "rimraf": "^2.6.2",
     "styled-jsx": "^2.2.1"
   }
 }
