@@ -6,10 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = require('styled-jsx/style');
-
-var _style2 = _interopRequireDefault(_style);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -38,11 +34,11 @@ var TabNavigation = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TabNavigation.__proto__ || Object.getPrototypeOf(TabNavigation)).call(this, props));
 
-    var tabs = _this.props.children.map(function (el) {
+    var tabs = _this.props && _this.props.children instanceof Array && _this.props.children.map(function (el) {
       return el.props.tab;
     });
     _this.state = {
-      currentTab: tabs[0].name,
+      currentTab: tabs && tabs[0] && tabs[0].name,
       tabs: tabs || []
     };
     return _this;
@@ -64,14 +60,10 @@ var TabNavigation = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        {
-          className: 'jsx-3106214966'
-        },
+        null,
         _react2.default.createElement(
           'div',
-          {
-            className: 'jsx-3106214966' + ' ' + 'flex flex-row justify-center'
-          },
+          { className: 'flex flex-row justify-center' },
           tabs.map(function (tab) {
             return _react2.default.createElement(_NavButton2.default, {
               onClick: _this2.buttonClickHandler.bind(_this2, tab.name),
@@ -84,10 +76,6 @@ var TabNavigation = function (_React$Component) {
         ),
         (0, _arrayPrototype2.default)(this.props.children, function (el) {
           return el.props.tab.name === currentTab;
-        }),
-        _react2.default.createElement(_style2.default, {
-          styleId: '3106214966',
-          css: ''
         })
       );
     }
