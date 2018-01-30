@@ -40,13 +40,9 @@ const ButtonNavigation = ({ type, blocking, children, onClick, className }) =>  
           border-radius: 0.6rem;
           background: transparent;
         }
-        
-
-button::-moz-focus-inner {
-  border: 0;
-}
-
-
+        button::-moz-focus-inner {
+          border: 0;
+        }
         .backSign {
           padding-left: 0.5rem;
           padding-bottom: 0.3rem;
@@ -82,7 +78,6 @@ button::-moz-focus-inner {
           color:white;
         }
         .blocking:focus, .blocking:hover, .blocking:active {
-          /*background-color:#d6d4d4;*/
           opacity:0.7;
           cursor:pointer;
         }
