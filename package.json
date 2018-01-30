@@ -1,12 +1,18 @@
 {
   "name": "blinkloader-ui-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A shared set of UI Components using React for Blinkloader applications.",
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "jsnext:main": "./es/index.js",
   "scripts": {
+    "storybook": "start-storybook -s ./public -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && mkdir dist && babel src --out-dir dist",
-    "storybook": "start-storybook -s ./public -p 9001 -c .storybook"
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build": "yarn run build:commonjs && yarn run build:es",
+    "clean": "rimraf lib es",
+    "prepare": "yarn run clean && yarn run build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +33,10 @@
     "react-responsive-select": "^3.0.10"
   },
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "rimraf": "^2.6.2",
+    "cross-env": "^5.1.1",
     "array.prototype.find": "^2.0.4",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
