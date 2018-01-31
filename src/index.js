@@ -9,5 +9,6 @@ import Tab from './TabNavigation';
 import CSSTabNavigation from './CSSTabNavigation';
 import Text from './Text';
 import Title from './Title';
+import Select from './Select';
 
-export { Button, ButtonNavigation, Code, Container, Input, Link, TabNavigation, Text, Title, Tab, CSSTabNavigation };
+export { Button, ButtonNavigation, Code, Container, Input, Link, TabNavigation, Text, Title, Tab, CSSTabNavigation, Select };

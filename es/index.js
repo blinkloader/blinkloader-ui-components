@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CSSTabNavigation = exports.Tab = exports.Title = exports.Text = exports.TabNavigation = exports.Link = exports.Input = exports.Container = exports.Code = exports.ButtonNavigation = exports.Button = undefined;
+exports.Select = exports.CSSTabNavigation = exports.Tab = exports.Title = exports.Text = exports.TabNavigation = exports.Link = exports.Input = exports.Container = exports.Code = exports.ButtonNavigation = exports.Button = undefined;
 
 var _Button = require('./Button');
 
@@ -45,6 +45,10 @@ var _Title = require('./Title');
 
 var _Title2 = _interopRequireDefault(_Title);
 
+var _Select = require('./Select');
+
+var _Select2 = _interopRequireDefault(_Select);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Button = _Button2.default;
@@ -58,3 +62,4 @@ exports.Text = _Text2.default;
 exports.Title = _Title2.default;
 exports.Tab = _TabNavigation2.default;
 exports.CSSTabNavigation = _CSSTabNavigation2.default;
+exports.Select = _Select2.default;
