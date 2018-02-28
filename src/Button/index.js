@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Spinner = ({size}) => {
   return (
-    <div className="flex flex-row justify-center">
-      <svg viewBox="0 0 20 20" className={`${size} spinner`} role="status">
+    <div className={`${size} flex flex-row justify-center items-center`}>
+      <svg viewBox="0 0 20 20" className="spinner" role="status">
         <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z"/>
       </svg>
       <style jsx>
@@ -19,18 +19,20 @@ const Spinner = ({size}) => {
             animation: loading .5s linear infinite;
             color: transparent;
             fill: #ffffff;
+            height:90%;
+            width:90%;
           }
           .large {
-            height: 1.5rem;
-            width: 1.5rem;
+            height: 2.25rem;
+            width: 2.25rem;
           } 
           .medium {
-            height: 1.2rem;
-            width: 1.2rem;
+            height: 1.8rem;
+            width: 1.8rem;
           }
           .small {
-            height: 1rem;
-            width: 1rem;
+            height: 1.5rem;
+            width: 1.5rem;
           }
         `}
       </style>
