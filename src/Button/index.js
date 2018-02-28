@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Spinner = ({size}) => {
   return (
-    <div className={`${size} flex flex-row justify-center items-center`}>
+    <div className={`${size} flex flex-row justify-center items-center center`}>
       <svg viewBox="0 0 20 20" className="spinner" role="status">
         <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z"/>
       </svg>
