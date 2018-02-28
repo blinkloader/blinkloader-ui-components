@@ -95,7 +95,7 @@ const Text = ({type, children}) => {
 };
 
 Text.defaultProps = {
-  children: 'text',
+  children: '',
   type: 'caption'
 };
 

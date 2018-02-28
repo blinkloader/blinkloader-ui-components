@@ -1,7 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({onClick, fullWidth, size, children, href, style}) => {
+const Spinner = ({size}) => {
+  return (
+    <div className="flex flex-row justify-center">
+      <svg viewBox="0 0 20 20" className={`${size} spinner`} role="status">
+        <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z"/>
+      </svg>
+      <style jsx>
+        {`
+          @keyframes loading {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .spinner {
+            animation: loading .5s linear infinite;
+            color: transparent;
+            fill: #ffffff;
+          }
+          .large {
+            height: 1.5rem;
+            width: 1.5rem;
+          } 
+          .medium {
+            height: 1.2rem;
+            width: 1.2rem;
+          }
+          .small {
+            height: 1rem;
+            width: 1rem;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+
+const Button = ({onClick, fullWidth, size, children, href, style, loading}) => {
   return (
     <div className={fullWidth ? 'full-width flex flex-row justify-center tc' : ''}>
       { !href &&
@@ -10,7 +47,7 @@ const Button = ({onClick, fullWidth, size, children, href, style}) => {
           style={style}
           className={`button ${fullWidth ? size + ' full-width' : size}`}
         >
-          {children}
+          {loading ? <Spinner size={size}/> : children}
         </button>}
       { href &&
         <a
@@ -18,7 +55,7 @@ const Button = ({onClick, fullWidth, size, children, href, style}) => {
           style={style}
           className={`button ${fullWidth ? size + ' full-width' : size}`}
         >
-          {children}
+          {loading ? <Spinner size={size}/> : children}
         </a>}
       <style jsx>
         {`
@@ -94,9 +131,9 @@ const Button = ({onClick, fullWidth, size, children, href, style}) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   size: PropTypes.oneOf(['large', 'medium', 'small']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
   style: PropTypes.object
@@ -105,7 +142,16 @@ Button.defaultProps = {
   size: 'small',
   fullWidth: false,
   href: '',
-  style: {}
+  style: {},
+  loading: false,
+  children: ''
+};
+
+Spinner.propTypes = {
+  size: PropTypes.oneOf(['large', 'medium', 'small'])
+};
+Spinner.defaultProps = {
+  size: 'small'
 };
 
 export default Button;
