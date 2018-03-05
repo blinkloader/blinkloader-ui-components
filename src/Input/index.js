@@ -40,7 +40,7 @@ const Input = ({
   name
 }) => {
   return (
-    <div>
+    <div className="w-100">
       {renderLabel({ label })}
       <input
         disabled={meta.submitting}
@@ -63,7 +63,7 @@ const Input = ({
         -o-appearance:          none;
         appearance:             none;
         box-sizing: border-box;
-        box-shadow: none !important; 
+        box-shadow: none !important;
         border-style:solid;
         font-size:18px;
         font-family:'Open Sans',sans-serif;
@@ -71,7 +71,7 @@ const Input = ({
         border-color: rgb(240, 240, 240);
         padding: 0.7rem 1rem;
         font-size: 1rem;
-        border-radius:0.7rem; 
+        border-radius:0.7rem;
 
       }
       input:focus:not(.error), input:hover:not(error), .focused {

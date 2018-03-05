@@ -17,7 +17,7 @@ const Select = ({
   name
 }) => {
   return (
-    <div>
+    <div className="w-100">
       <div style={{paddingBottom: '0.5rem'}}>
         <Title type="paragraphH3">
           {label}
@@ -41,13 +41,13 @@ const Select = ({
           .rrs--has-changed .rrs__label {
             color: #333;
           }
-          
+
           .rrs *,
           .rrs *:before,
           .rrs *:after {
             box-sizing: border-box;
           }
-          
+
           .rrs__button {
             position: relative;
             cursor: pointer;
@@ -58,19 +58,19 @@ const Select = ({
             border-width:2px;
             border-color: rgb(240, 240, 240);
             font-size: 1rem;
-            border-radius:0.7rem; 
+            border-radius:0.7rem;
           }
-          
+
           .rrs__button--disabled {
             color: #999999;
             background: #f5f5f5;
             cursor: default;
           }
-          
+
           .rrs__button:focus {
             outline: 0;
           }
-          
+
           .rrs__button + .rrs__options {
             list-style: none;
             padding: 0;
@@ -80,7 +80,7 @@ const Select = ({
             z-index: 2;
             border: 2px solid #1DAcf0;
             border-top: 1px solid #eee;
-            border-radius:0 0 0.7rem 0.7rem; 
+            border-radius:0 0 0.7rem 0.7rem;
             top: 42px;
             width: 100%;
             height: 0;
@@ -88,7 +88,7 @@ const Select = ({
             overflow: hidden;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
           }
-          
+
           .rrs--options-visible .rrs__options {
             height: auto;
             visibility: visible;
@@ -96,44 +96,44 @@ const Select = ({
             -webkit-overflow-scrolling: touch;
             max-height: 230px;
           }
-          
+
           .rrs__option {
             cursor: pointer;
             padding: 0.75rem 1rem;
             margin: 0;
             border-top: #eee 1px solid;
           }
-          
+
           .rrs__option * {
             pointer-events: none;
           }
-          
+
           .rrs__option:first-of-type {
             border-top: 0;
           }
-          
+
           .rrs__option:focus {
             outline: 0;
           }
-          
+
           .rrs__option:hover {
             background: #f5f5f5;
             color: #0273b5;
           }
-          
+
           .rrs__option:active {
             background: #e1f5fe;
           }
-          
+
           .rrs__option.rrs__option--next-selection {
             background: #f1f8fb;
             color: #0273b5;
           }
-          
+
           .rrs__option.rrs__option--selected {
             color: #0273b5;
           }
-          
+
           .rrs__label {
             padding: 0 1rem 0 1rem;
             display: inline-flex;
@@ -149,11 +149,11 @@ const Select = ({
           .rrs__label__text {
             flex-grow:1;
           }
-          
+
           .rrs--options-visible .rrs__button {
             outline: 0;
             border: 2px solid #1DA3F0;
-            border-radius:0.7rem 0.7rem 0 0; 
+            border-radius:0.7rem 0.7rem 0 0;
             border-bottom:none;
           }
           .caret-icon {
@@ -162,7 +162,7 @@ const Select = ({
             top: 1.25rem;
             fill: #333;
           }
-          
+
           /* OPTIONAL - animate caret icon */
           .rrs--options-visible .caret-icon {
             transform: rotate(180deg);
@@ -171,29 +171,29 @@ const Select = ({
           .rrs__button:focus {
             outline: 0;
             border: 2px solid #1DA3F0;
-            border-radius:0.7rem; 
-          
+            border-radius:0.7rem;
+
           }
-          
-          
+
+
           /*
-          
+
             Multiselect overrides
-          
+
           */
-          
+
           .rrs__multiselect-label {
             display: inline-flex;
             max-width: 100%;
             line-height: 1;
           }
-          
+
           .rrs__multiselect-label__text {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
           }
-          
+
           .rrs__multiselect-label__badge{
             border: 1px solid #ccc;
             padding: 1px 6px;

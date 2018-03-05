@@ -77,7 +77,7 @@ var Text = function Text(_ref) {
 };
 
 Text.defaultProps = {
-  children: 'text',
+  children: '',
   type: 'caption'
 };
 
