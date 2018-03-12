@@ -1,7 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ButtonNavigation = ({ type, blocking, children, onClick, className }) =>  {
+const Spinner = () => {
+  return (
+    <div className="small flex flex-row justify-center items-center center">
+      <svg viewBox="0 0 20 20" className="spinner" role="status">
+        <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z"/>
+      </svg>
+      <style jsx>
+        {`
+          @keyframes loading {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .spinner {
+            animation: loading .5s linear infinite;
+            color: transparent;
+            fill: #ffffff;
+            height:90%;
+            width:90%;
+          }
+          .small {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+
+const ButtonNavigation = ({ type, blocking, children, onClick, className, loading }) =>  {
   return (
     <div className={className}>
       <span className = {
@@ -9,10 +40,10 @@ const ButtonNavigation = ({ type, blocking, children, onClick, className }) =>  
         ${type === 'back'? 'back button' : blocking ? 'blocking button' : 'forward button'}`
       }>
         { type === 'back'? <span className='backSign'>&#8249;</span> : ''}
-        <button className='pointer'
+        <button className='pointer flex flex-row justify-center'
           onClick={ onClick }
         >
-          { children }
+          {loading ? <Spinner/> : children}
         </button>
         { type === 'forward'? <span className='nextSign'>&#8250;</span> : ''}
       </span>

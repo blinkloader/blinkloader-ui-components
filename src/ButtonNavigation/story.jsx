@@ -12,8 +12,14 @@ storiesOf('ButtonNavigation')
     <ButtonNavigation type='back' onClick={firstArgAction('on-click')}>back to intro</ButtonNavigation>
   ))
   .add('next non-blocking', () => (
-    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')} blocking={false}>Great! Bring me to the dashboard</ButtonNavigation>
+    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')}>Great! Bring me to the dashboard</ButtonNavigation>
   ))
   .add('next blocking', () => (
-    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')}  blocking={true}>I still want to proceed</ButtonNavigation>
+    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')} blocking>I still want to proceed</ButtonNavigation>
+  ))
+  .add('next non-blocking loading', () => (
+    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')} loading>Great! Bring me to the dashboard</ButtonNavigation>
+  ))
+  .add('next blocking loading', () => (
+    <ButtonNavigation type='forward' onClick={firstArgAction('on-click')}  blocking loading>I still want to proceed</ButtonNavigation>
   ))
